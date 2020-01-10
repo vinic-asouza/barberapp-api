@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import * as Yup from 'yup';
 import User from '../models/User';
 import File from '../models/File';
@@ -16,7 +15,7 @@ class UserController {
         });
 
         if (!(await schema.isValid(req.body))) {
-            return res.status(400).json({ error: 'Validator fails' });
+            return res.status(400).json({ error: 'Validation failed.' });
         }
 
         const userExists = await User.findOne({
@@ -29,12 +28,7 @@ class UserController {
 
         const { id, name, email, provider } = await User.create(req.body);
 
-        return res.json({
-            id,
-            name,
-            email,
-            provider,
-        });
+        return res.json({ id, name, email, provider });
     }
 
     async update(req, res) {
@@ -53,7 +47,7 @@ class UserController {
         });
 
         if (!(await schema.isValid(req.body))) {
-            return res.status(400).json({ error: 'Validator fails' });
+            return res.status(400).json({ error: 'Validation failed.' });
         }
 
         const { email, oldPassword } = req.body;
@@ -71,7 +65,9 @@ class UserController {
         }
 
         if (oldPassword && !(await user.checkPassword(oldPassword))) {
-            return res.status(401).json({ error: 'Password does not match' });
+            return res
+                .status(401)
+                .json({ error: 'Old Password does not match.' });
         }
 
         await user.update(req.body);
@@ -82,15 +78,15 @@ class UserController {
                     model: File,
                     as: 'avatar',
                     attributes: ['id', 'path', 'url'],
-                }
-            ]
-        })
+                },
+            ],
+        });
 
         return res.json({
             id,
             name,
             email,
-            avatar
+            avatar,
         });
     }
 }
