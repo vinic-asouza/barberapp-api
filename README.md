@@ -79,3 +79,11 @@ Criar arquivo .env na raiz do projeto, seguindo o exemplo do arquivo .env.exampl
 **Iniciar serviço de Filas (Redis), em segundo plano:**
 
     $ yarn run queue
+
+Sistema em execução:
+![Captura de Tela 2020-01-10 às 11 09 24](https://user-images.githubusercontent.com/32015296/72159194-979f4880-339a-11ea-86de-9f9dbdb641b1.png)
+
+
+**Obs:** Caso utilize o software **Imsominia** para testes, há um arquivo de backup para importar todas as requests já configuradas para realizar os teste de requisições. Está localizado na pasta *./resources/imsomnia-backups*.
+
+![Captura de Tela 2020-01-10 às 11 21 44](https://user-images.githubusercontent.com/32015296/72160276-d1714e80-339c-11ea-94bc-1e110cb51b66.png)
