@@ -5,18 +5,24 @@ O projeto é divido em 3 aplicacoes:
 - **Servidor (API)**:
 
     Onde é realizado toda lógica de negócio e o fluxo de dados.
-
+    
+    Linguagem: Node.js
+    
     Repositório: https://github.com/vinic-asouza/barberapp-api.git
 
 - **Sistema WEB**:
 
     Repositório: https://github.com/vinic-asouza/barberapp-web.git
+    
+    Linguagem: React
 
     Ambiente para uso do estabelicimento/prestador onde é possível realizar o cadastro dos prestadores, gerenciar o perfil e verificar a agenda.
 
 - **App Mobile**:
 
     Repositório: https://github.com/vinic-asouza/barberapp-mobile.git
+    
+    Linguagem: React Native
 
     Ambiente para uso dos clientes, onde é possível se cadastrar e realizar os agendamentos de servicos.
 
